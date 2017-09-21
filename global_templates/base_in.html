@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block navtop %}
+  
+<!--Navbar-->
+        <nav class="mb-1 navbar navbar-expand-lg navbar-dark cyan">
+                    <img src="{% static 'img/logo2.png' %}" style="width: 10%;" alt="">
+                    <a class="navbar-brand" href="/">Azucarera La Grecia</a>
+                    
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4" aria-controls="navbarSupportedContent-4"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"><i class="fa fa-envelope"></i> Contacto <span class="sr-only"></span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"><i class="fa fa-calendar"></i> Eventos <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"><i class="fa fa-gear"></i> Settings</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i> {{uausuario}} </a>
+                                <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
+                                    <a class="dropdown-item" href="#">Mi Perfil</a>
+                                    <a class="dropdown-item" href="/account/blockscreen/">Bloquear Pantalla</a>
+                                    <a class="dropdown-item" href="/account/logout/">Cerrar Sesión</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+        <!--/.Navbar-->
+
+{% endblock %}
+{% block container %}
+    <div class="container-fluid mimin-wrapper">
+      <div id="left-menu">
+      {% block navbar %}{% endblock %}
+      </div>
+       
+      <div id="content">   
+      {% block info %}{% endblock %}
+      </div>
+</div>
+{% endblock container %}
